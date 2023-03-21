@@ -16,25 +16,20 @@ using System.Windows.Shapes;
 namespace WpfApp1
 {
     /// <summary>
-    /// Interaction logic for CustomButton.xaml
+    /// Interaction logic for LimitedInputUserControl.xaml
     /// </summary>
-    public partial class CustomButton : UserControl
+    public partial class LimitedInputUserControl : UserControl
     {
-        public CustomButton()
+        public LimitedInputUserControl()
         {
             InitializeComponent();
             this.DataContext = this;
 
         }
 
-        private void button_Click(object sender, RoutedEventArgs e)
-        {
-            //txtBox.Text = "You have clicked button";
-        }
-
         public string Title { get; set; }
-        public string Description { get; set; }
 
-        public Brush BackgroundColor { get; set; } = new SolidColorBrush(Colors.Black);
+        public int MaxLength { get; set; }
+
     }
 }

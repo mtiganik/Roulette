@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1"
+        xmlns:uc="clr-namespace:WpfApp1"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
         <Grid Background="#000000">
@@ -18,7 +19,10 @@
             <RowDefinition Height="2*"/>
             <RowDefinition Height="2*"/>
         </Grid.RowDefinitions>
-        <Button local:CornerRadiusSetter.CornerRadius="10">Button</Button>
+            <!--<uc:LimitedInputUserControl Title="Enter title:" MaxLength="30" Height="50" Grid.Row="0" Grid.Column="2"/>-->
+        <uc:CustomButton Title ="432342" Grid.Row="0" Grid.Column="1"/>
+
+        <!--<Button local:CornerRadiusSetter.CornerRadius="10">Button</Button>-->
         <TextBox local:CornerRadiusSetter.CornerRadius="3,0,0,3" />
 
         <Polygon  Grid.Row="1" Grid.Column="0" Points="100,0 0,0 0,100" Stroke="White" StrokeThickness="4"  Fill="Yellow" RenderTransformOrigin="0.5,0.5" >
@@ -44,23 +48,24 @@
                 <RowDefinition Height="1*"/>
             </Grid.RowDefinitions>
 
-            <TextBlock Text="2to1" Grid.Row="0" Grid.Column="0" RenderTransformOrigin="0.5,0.5">
-                <TextBlock.RenderTransform>
+            <uc:CustomButton Text="2to1" Grid.Row="0" Grid.Column="0" RenderTransformOrigin="0.5,0.5">
+                <!--<Button.RenderTransform>
                     <RotateTransform Angle="-90" />
-                </TextBlock.RenderTransform>
+                </Button.RenderTransform>-->
 
-            </TextBlock>
-            <TextBlock Text="2to1" Grid.Row="1" Grid.Column="0" RenderTransformOrigin="0.5,0.5">
-                <TextBlock.RenderTransform>
+            </uc:CustomButton>
+            
+            <uc:CustomButton Title="2to1" Grid.Row="1" Grid.Column="0" RenderTransformOrigin="0.5,0.5">
+                <!--<TextBlock.RenderTransform>
                     <RotateTransform Angle="-90" />
-                </TextBlock.RenderTransform>
+                </TextBlock.RenderTransform>-->
 
-            </TextBlock>
-            <TextBlock Text="2to1" Grid.Row="2" Grid.Column="0" RenderTransformOrigin="0.5,0.5">
-                <TextBlock.RenderTransform>
+            </uc:CustomButton>
+            <uc:CustomButton Title="2to1" Grid.Row="2" Grid.Column="0" RenderTransformOrigin="0.5,0.5">
+                <!--<TextBlock.RenderTransform>
                     <RotateTransform Angle="-90" />
-                </TextBlock.RenderTransform>
-            </TextBlock>
+                </TextBlock.RenderTransform>-->
+            </uc:CustomButton>
         </Grid>
 
         <Grid Grid.Row="2" Grid.Column="1" Margin="0,8,0,0" >
@@ -76,16 +81,16 @@
                 <ColumnDefinition Width="1*"/>
                 <ColumnDefinition Width="1*"/>
             </Grid.ColumnDefinitions>
-            <!--<control:CustomButton Grid.Row="0" Grid.Column="2" />-->
-            <TextBox Text="1st 12" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"/>
-            <TextBlock Text="2nd 12" Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="2"/>
-            <TextBlock Text="3rd 12" Grid.Row="0" Grid.Column="4" Grid.ColumnSpan="2"/>
-            <TextBlock Text="1 to 18" Grid.Row="1" Grid.Column="0"/>
-            <TextBlock Text="Even" Grid.Row="1" Grid.Column="1"/>
-            <TextBlock Grid.Row="1" Grid.Column="2"/>
-            <TextBlock Grid.Row="1" Grid.Column="3" Background="#BC1318"/>
-            <TextBlock Text="Odd" Grid.Row="1" Grid.Column="4"/>
-            <TextBlock Text="19 to 36" Grid.Row="1" Grid.Column="5"/>
+
+            <uc:CustomButton Title="1st 12" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"/>
+            <uc:CustomButton Title="2nd 12" Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="2"/>
+            <uc:CustomButton Title="3rd 12" Grid.Row="0" Grid.Column="4" Grid.ColumnSpan="2"/>
+            <uc:CustomButton Title="1 to 18" Grid.Row="1" Grid.Column="0"/>
+            <uc:CustomButton Title="Even" Grid.Row="1" Grid.Column="1"/>
+            <uc:CustomButton Grid.Row="1" Grid.Column="2"/>
+            <uc:CustomButton Grid.Row="1" Grid.Column="3" BackgroundColor="Red"/>
+            <uc:CustomButton Title="Odd" Grid.Row="1" Grid.Column="4"/>
+            <uc:CustomButton Title="19 to 36" Grid.Row="1" Grid.Column="5"/>
 
         </Grid>
     </Grid>

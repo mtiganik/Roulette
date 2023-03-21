@@ -7,15 +7,38 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <TextBlock Height = "23"  
-         HorizontalAlignment = "Left"  
-         Margin = "80,49,0,0" Name = "txtBox"  
-         VerticalAlignment = "Top" Width = "200" PreviewMouseDown = "button_Click"/>
-        
-        <Button Content = "Click Me"  
-         Height = "23" HorizontalAlignment = "Left"  
-         Margin = "96,88,0,0" Name = "button"  
-         VerticalAlignment = "Top" Click = "button_Click" />
+        <Button Content="{Binding Title}" Grid.Column="1" Grid.Row="3" 
+                BorderBrush="White" BorderThickness="2" FontSize="16"  Foreground="White"
+                Margin="2">
+            <Button.Resources>
+                
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="6"></Setter>
+                </Style>
 
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Background" Value="{Binding BackgroundColor}"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border Background="{TemplateBinding Background}" BorderBrush="white" BorderThickness="1">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="Blue"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+
+
+            </Button.Resources>
+
+        </Button>
+
+        
     </Grid>
 </UserControl>
