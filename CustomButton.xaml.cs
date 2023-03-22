@@ -29,12 +29,13 @@ namespace WpfApp1
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
-            //txtBox.Text = "You have clicked button";
+            //Alert("You have clicked button");
         }
 
         public string Title { get; set; }
         public string Description { get; set; }
 
         public Brush BackgroundColor { get; set; } = new SolidColorBrush(Colors.Black);
+        public Brush ForeGroundBrush { get; set; } = Brushes.White;
     }
 }

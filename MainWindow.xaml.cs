@@ -24,7 +24,6 @@ namespace WpfApp1
     public static class NumberTypes
     {
         private static int[] Reds = {1,3,5,7,9,12,14,16,18,19,21,23,25,27,30,32,34,36};
-        private static int[] Blacks = { 2, 4, 6, 8, 10, 11, 13, 15, 17, 20, 22, 24, 26, 28, 29, 31, 33, 35 };
         /// <summary>
         /// Gives answer whether a number is red number or not
         /// </summary>
@@ -33,17 +32,6 @@ namespace WpfApp1
         public static bool isRed(int num)
         {
             if (Reds.Contains(num)) return true;
-            return false;
-        }
-
-        /// <summary>
-        /// Gives answer whether a number is black number or not
-        /// </summary>
-        /// <param name="num">number to be check if it is black or not</param>
-        /// <returns>True if black, otherwise False</returns>
-        public static bool isBlack(int num)
-        {
-            if (Blacks.Contains(num)) return true;
             return false;
         }
 
@@ -79,31 +67,14 @@ namespace WpfApp1
         /// </summary>
         /// <param name="index">index of the element. Note that actual number is index + 1</param>
         /// <returns>Border element that contains button. This can be added to dynamicGrid</returns>
-        private static Button CreateElementToGrid(int index)
+        private static CustomButton CreateElementToGrid(int index)
         {
-            var button = new System.Windows.Controls.Button
+            var button = new CustomButton
             {
-                Content = index + 1,
-                HorizontalAlignment = HorizontalAlignment.Stretch,
-                VerticalAlignment = VerticalAlignment.Stretch,
-                Background = GetBackgroundColor(index),
-                FontSize = 16,
-                BorderThickness = new Thickness(1),
-                BorderBrush = Brushes.White,
-                Foreground = Brushes.White,
-                Margin = new Thickness(2)
+                Title = (index + 1).ToString(),
+                BackgroundColor = GetBackgroundColor(index),
+                ForeGroundBrush = GetForegroundBrush(index)
             };
-
-            var style = new Style
-            {
-                TargetType = typeof(Border),
-                Setters = { new Setter { Property = Border.CornerRadiusProperty, Value = new CornerRadius(6) } }
-            };
-
-
-
-            button.Resources.Add(style.TargetType, style);
-
 
             Grid.SetColumn(button, getColumnNumber(index));
             Grid.SetRow(button, getRowNumber(index));
@@ -132,10 +103,5 @@ namespace WpfApp1
         {
             return (int)(index / 3);
         }
-
-
-
     }
-
-
 }
