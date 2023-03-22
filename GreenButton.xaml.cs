@@ -16,20 +16,21 @@ using System.Windows.Shapes;
 namespace WpfApp1
 {
     /// <summary>
-    /// Interaction logic for LimitedInputUserControl.xaml
+    /// Interaction logic for GreenButton.xaml
     /// </summary>
-    public partial class LimitedInputUserControl : UserControl
+    public partial class GreenButton : UserControl
     {
-        public LimitedInputUserControl()
+        public GreenButton()
         {
             InitializeComponent();
             this.DataContext = this;
 
         }
 
-        public string Title { get; set; }
-
-        public int MaxLength { get; set; }
+        private void BtnGreen_Click(object sender, RoutedEventArgs e)
+        {
+            //txtBox.Text = "You have clicked button";
+        }
 
     }
 }

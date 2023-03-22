@@ -8,6 +8,7 @@ using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
+using System.Windows.Markup;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
@@ -43,10 +44,15 @@ namespace WpfApp1
             this.dynamicGrid.RowDefinitions.Add(gridRow3);
 
             TextBlock txtBlock1 = BlackTextBox(1);
+            txtBlock1.Text = "Hello";
             Grid.SetRow(txtBlock1, 0);
             Grid.SetColumn(txtBlock1, 0);
 
             this.dynamicGrid.Children.Add(txtBlock1);
+
+
+            // Zero Polygon
+
 
         }
 
@@ -65,4 +71,17 @@ namespace WpfApp1
 
 
     }
+
+    public class MyMarkupExtension : MarkupExtension
+    {
+        public MyMarkupExtension() { }
+        public String FirstStr { get; set; }
+        public String SecondStr { get; set; }
+
+        public override object ProvideValue(IServiceProvider serviceProvider)
+        {
+            return FirstStr + " " + SecondStr;
+        }
+    }
+
 }

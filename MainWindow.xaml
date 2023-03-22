@@ -7,7 +7,7 @@
         xmlns:uc="clr-namespace:WpfApp1"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-        <Grid Background="#000000">
+    <Grid Background="#000000">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="3*" />
             <ColumnDefinition Width="12*"/>
@@ -19,22 +19,16 @@
             <RowDefinition Height="2*"/>
             <RowDefinition Height="2*"/>
         </Grid.RowDefinitions>
-            <!--<uc:LimitedInputUserControl Title="Enter title:" MaxLength="30" Height="50" Grid.Row="0" Grid.Column="2"/>-->
-        <uc:CustomButton Title ="432342" Grid.Row="0" Grid.Column="1"/>
+        <Grid Grid.Row="0" Grid.Column="0">
+            <!--<Button x:Name="btnForward" FontSize="14" Click="BtnForward_Click" Margin="5,5,5,5"
+        Background="Transparent" BorderThickness="0">
+                <Polygon Points="0,0 18,10 0,20" Fill="DarkSlateGray" />
+            </Button>-->
+        </Grid>
+        <Grid Grid.Column="0" Grid.Row="1">
+            <uc:GreenButton />
+        </Grid>
 
-        <!--<Button local:CornerRadiusSetter.CornerRadius="10">Button</Button>-->
-        <TextBox local:CornerRadiusSetter.CornerRadius="3,0,0,3" />
-
-        <Polygon  Grid.Row="1" Grid.Column="0" Points="100,0 0,0 0,100" Stroke="White" StrokeThickness="4"  Fill="Yellow" RenderTransformOrigin="0.5,0.5" >
-            <Polygon.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="-0.261"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </Polygon.RenderTransform>
-        </Polygon>
         <Grid Name="dynamicGrid" Grid.Row="1" Grid.Column="1" />
         <Grid Grid.Row="1" Grid.Column="2" Margin="8,0,0,0">
             <Grid.ColumnDefinitions>
@@ -48,23 +42,23 @@
                 <RowDefinition Height="1*"/>
             </Grid.RowDefinitions>
 
-            <uc:CustomButton Text="2to1" Grid.Row="0" Grid.Column="0" RenderTransformOrigin="0.5,0.5">
-                <!--<Button.RenderTransform>
+            <uc:CustomButton Title="2to1" Grid.Row="0" Grid.Column="0" RenderTransformOrigin="0.5,0.5">
+                <uc:CustomButton.LayoutTransform>
                     <RotateTransform Angle="-90" />
-                </Button.RenderTransform>-->
-
+                </uc:CustomButton.LayoutTransform>
             </uc:CustomButton>
-            
+
+
             <uc:CustomButton Title="2to1" Grid.Row="1" Grid.Column="0" RenderTransformOrigin="0.5,0.5">
-                <!--<TextBlock.RenderTransform>
+                <uc:CustomButton.LayoutTransform>
                     <RotateTransform Angle="-90" />
-                </TextBlock.RenderTransform>-->
-
+                </uc:CustomButton.LayoutTransform>
             </uc:CustomButton>
+
             <uc:CustomButton Title="2to1" Grid.Row="2" Grid.Column="0" RenderTransformOrigin="0.5,0.5">
-                <!--<TextBlock.RenderTransform>
+                <uc:CustomButton.LayoutTransform>
                     <RotateTransform Angle="-90" />
-                </TextBlock.RenderTransform>-->
+                </uc:CustomButton.LayoutTransform>
             </uc:CustomButton>
         </Grid>
 

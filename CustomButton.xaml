@@ -10,8 +10,8 @@
         <Button Content="{Binding Title}" Grid.Column="1" Grid.Row="3" 
                 BorderBrush="White" BorderThickness="2" FontSize="16"  Foreground="White"
                 Margin="2">
+
             <Button.Resources>
-                
                 <Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="6"></Setter>
                 </Style>
@@ -33,12 +33,7 @@
                         </Trigger>
                     </Style.Triggers>
                 </Style>
-
-
             </Button.Resources>
-
         </Button>
-
-        
     </Grid>
 </UserControl>
