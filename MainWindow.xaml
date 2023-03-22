@@ -19,14 +19,14 @@
             <RowDefinition Height="2*"/>
             <RowDefinition Height="2*"/>
         </Grid.RowDefinitions>
-        <Grid Grid.Row="0" Grid.Column="0">
-            <!--<Button x:Name="btnForward" FontSize="14" Click="BtnForward_Click" Margin="5,5,5,5"
-        Background="Transparent" BorderThickness="0">
-                <Polygon Points="0,0 18,10 0,20" Fill="DarkSlateGray" />
-            </Button>-->
-        </Grid>
+
         <Grid Grid.Column="0" Grid.Row="1">
-            <uc:GreenButton />
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+            <uc:CustomButton Title="0" Grid.Row="0" Grid.Column="1" BackgroundColor="Green"/>
+
         </Grid>
 
         <Grid Name="dynamicGrid" Grid.Row="1" Grid.Column="1" />
